@@ -1,99 +1,565 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My GitHub Pages Website</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automation and Job Displacement | Triple Tree</title>
     <style>
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        line-height: 1.6;
-        margin: 0;
-        padding: 0;
-        color: #333;
-        background-color: #f4f4f4;
-      }
-
-      .container {
-        width: 80%;
-        margin: 0 auto;
-        padding: 2rem;
-      }
-
-      header {
-        text-align: center;
-        padding: 2rem 0;
-        background-color: #4caf50;
-        color: white;
-        margin-bottom: 2rem;
-      }
-
-      h1 {
-        margin: 0;
-      }
-
-      .content {
-        background-color: white;
-        padding: 2rem;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      }
-
-      footer {
-        text-align: center;
-        padding: 1rem 0;
-        margin-top: 2rem;
-        background-color: #333;
-        color: white;
-      }
-
-      /* Simple responsive design */
-      @media (max-width: 768px) {
-        .container {
-          width: 95%;
-          padding: 1rem;
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
         }
-      }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f8f8;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: #2c3e50;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #3498db;
+        }
+        
+        /* Header */
+        header {
+            background-color: #3498db;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Section Styling */
+        section {
+            padding: 4rem 0;
+        }
+        
+        section:nth-child(even) {
+            background-color: white;
+        }
+        
+        .section-heading {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-heading h2 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .section-heading p {
+            color: #7f8c8d;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Card Layout */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        section:nth-child(even) .card {
+            background-color: #f8f8f8;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .card-img {
+            height: 200px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+        
+        .card-content h3 {
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .card-content p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .card-content .source {
+            font-size: 0.8rem;
+            color: #999;
+            font-style: italic;
+        }
+        
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .column-text {
+            padding: 1rem;
+        }
+        
+        .column-text h3 {
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .column-image {
+            height: 300px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            border-radius: 8px;
+        }
+        
+        /* Case Studies */
+        .case-study {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        section:nth-child(even) .case-study {
+            background-color: #f8f8f8;
+        }
+        
+        .case-study h3 {
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        /* Team Section */
+        .team-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .team-member {
+            width: 300px;
+            text-align: center;
+        }
+        
+        .team-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 1rem 0;
+        }
+        
+        .footer-links li {
+            margin: 0 1rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .citation {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-links {
+                margin-top: 1rem;
+            }
+            
+            .nav-links li {
+                margin: 0 0.75rem;
+            }
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">Triple Tree</div>
+            <ul class="nav-links">
+                <li><a href="#economic-impact">Economic Impact</a></li>
+                <li><a href="#security-privacy">Security & Privacy</a></li>
+                <li><a href="#ethical-social">Ethical Implications</a></li>
+                <li><a href="#case-studies">Case Studies</a></li>
+                <li><a href="#expert-interviews">Expert Insights</a></li>
+                <li><a href="#about-us">About Us</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Header -->
     <header>
-      <h1>My GitHub Pages Website</h1>
-      <p>Welcome to my first GitHub Pages site!</p>
+        <div class="container">
+            <h1>Automation and Job Displacement in Various Industries</h1>
+            <p>Exploring the economic, security, and ethical implications of automation in the automotive industry and beyond</p>
+        </div>
     </header>
-
-    <div class="container">
-      <div class="content">
-        <h2>Hello, GitHub Pages!</h2>
-        <p>
-          This is a simple starter template for a GitHub Pages website. You can
-          customize it to make it your own!
-        </p>
-
-        <h3>What can I do with GitHub Pages?</h3>
-        <p>
-          GitHub Pages allows you to host static websites directly from your
-          GitHub repository. It's perfect for:
-        </p>
-        <ul>
-          <li>Personal websites</li>
-          <li>Project documentation</li>
-          <li>Portfolios</li>
-          <li>Simple blogs</li>
-          <li>Project landing pages</li>
-        </ul>
-
-        <h3>Getting Started</h3>
-        <p>
-          To edit this website, simply modify the HTML, CSS, and JavaScript
-          files in your repository. GitHub Pages will automatically update your
-          site when you push changes.
-        </p>
-      </div>
-    </div>
-
+    
+    <!-- Economic Impact Section -->
+    <section id="economic-impact">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Economic Impact of Automation</h2>
+                <p>How automation is reshaping job markets and employment prospects in the automotive sector</p>
+            </div>
+            
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-img">
+                        [PLACEHOLDER FOR JOB DISPLACEMENT CHART]
+                    </div>
+                    <div class="card-content">
+                        <h3>Job Displacement Statistics</h3>
+                        <p>Between 1990 and 2007, the increase in robots (about one per thousand workers) reduced the average employment-to-population ratio in a zone by 0.39 percentage points, and average wages by 0.77%. Adding one more robot in a commuting zone reduces employment by six workers in that area.</p>
+                        <p class="source">Source: MIT Sloan Study on Robot Impact</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img">
+                        [PLACEHOLDER FOR NEW JOBS IMAGE]
+                    </div>
+                    <div class="card-content">
+                        <h3>New Job Creation</h3>
+                        <p>While robots have displaced unskilled workers on assembly lines, they have also created new jobs for machinists, advanced welders, and other technicians who maintain the machines or use them to perform new tasks.</p>
+                        <p class="source">Source: Brookings Institution Research</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img">
+                        [PLACEHOLDER FOR GLOBAL COMPARISON CHART]
+                    </div>
+                    <div class="card-content">
+                        <h3>Global Perspective</h3>
+                        <p>In South Africa's apparel industry, "We find that the impact of automation on unemployment is negligible. In some instances, automation has and is predicted to increase employment by improving productivity." Automation doesn't always have a negative effect on industries.</p>
+                        <p class="source">Source: Science Direct Research Paper</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Security and Privacy Section -->
+    <section id="security-privacy">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Security and Privacy Concerns</h2>
+                <p>The risks associated with increased automation in the automotive industry</p>
+            </div>
+            
+            <div class="two-column">
+                <div class="column-image">
+                    [PLACEHOLDER FOR CYBERSECURITY INFOGRAPHIC]
+                </div>
+                <div class="column-text">
+                    <h3>Cybersecurity Vulnerabilities</h3>
+                    <p>Automated assembly lines and robotic systems in manufacturing facilities can be vulnerable to cyberattacks that could halt production or compromise safety. For example, recently CrowdStrike pushed a bad software update that almost shut down the entire airline industry.</p>
+                    <p class="citation">Source: Cirium Thought Cloud Analysis</p>
+                </div>
+            </div>
+            
+            <div class="two-column">
+                <div class="column-text">
+                    <h3>Self-Driving Vehicle Security</h3>
+                    <p>Connected and automated vehicles can be targets for hacking, potentially allowing unauthorized access to vehicle systems including steering, braking, and acceleration. This presents significant safety risks as vehicles become more connected and autonomous.</p>
+                </div>
+                <div class="column-image">
+                    [PLACEHOLDER FOR CAR SYSTEMS DIAGRAM]
+                </div>
+            </div>
+            
+            <div class="two-column">
+                <div class="column-image">
+                    [PLACEHOLDER FOR DATA COLLECTION VISUALIZATION]
+                </div>
+                <div class="column-text">
+                    <h3>Data Privacy</h3>
+                    <p>Modern vehicles collect vast amounts of data about driving habits, location history, and even biometric information, raising concerns about who owns this data and how it's being used. Insurance companies may buy this data and use it for various means including risk assessment and pricing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Ethical and Social Implications Section -->
+    <section id="ethical-social">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Ethical and Social Implications</h2>
+                <p>The moral questions and social consequences of increasing automation</p>
+            </div>
+            
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-img">
+                        [PLACEHOLDER FOR DATA OWNERSHIP INTERACTIVE]
+                    </div>
+                    <div class="card-content">
+                        <h3>Data Ownership</h3>
+                        <p>Relating to modern vehicles collecting data, ethical questions can come up with who owns this data and how it is used. Does the owner of the car own the data? Or does the manufacturer/seller of the car?</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img">
+                        [PLACEHOLDER FOR TROLLEY PROBLEM IMAGE]
+                    </div>
+                    <div class="card-content">
+                        <h3>Autonomous Decision Making</h3>
+                        <p>In the aspect of automated cars, ethical concerns come up with what it should do in the event of an accident. The trolley problem is a famous example of this ethical dilemma.</p>
+                        <p class="source">Source: Brookings Institution Ethics Analysis</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img">
+                        [PLACEHOLDER FOR LIABILITY DIAGRAM]
+                    </div>
+                    <div class="card-content">
+                        <h3>Liability Issues</h3>
+                        <p>In the event of an accident, who would be held responsible? Is it the programmer, manufacturer, or the vehicle owner? One could say that it was the human's fault to get into that situation to begin with but another could say that the autonomous system should have been programmed better.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Case Studies Section -->
+    <section id="case-studies">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Real-World Case Studies</h2>
+                <p>Examples of automation implementation in the automotive industry</p>
+            </div>
+            
+            <div class="case-study">
+                <h3>Case Study 1: [PLACEHOLDER FOR COMPANY NAME]</h3>
+                <div class="two-column">
+                    <div class="column-image">
+                        [PLACEHOLDER FOR COMPANY LOGO/IMAGE]
+                    </div>
+                    <div class="column-text">
+                        <p>This section will feature a detailed look at a specific automotive manufacturer's implementation of automation technologies, including the impact on their workforce and productivity metrics.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="case-study">
+                <h3>Case Study 2: [PLACEHOLDER FOR COMPANY NAME]</h3>
+                <div class="two-column">
+                    <div class="column-text">
+                        <p>This section will examine another manufacturer's approach to automation, highlighting different strategies and outcomes compared to the first case study.</p>
+                    </div>
+                    <div class="column-image">
+                        [PLACEHOLDER FOR COMPANY LOGO/IMAGE]
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Expert Interviews Section -->
+    <section id="expert-interviews">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Expert Perspectives</h2>
+                <p>Insights from Virginia Tech professors and industry professionals</p>
+            </div>
+            
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-img">
+                        [PLACEHOLDER FOR EXPERT HEADSHOT]
+                    </div>
+                    <div class="card-content">
+                        <h3>Professor [PLACEHOLDER NAME]</h3>
+                        <p>Key insights from interview about economic impacts of automation in manufacturing and potential policy solutions.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img">
+                        [PLACEHOLDER FOR EXPERT HEADSHOT]
+                    </div>
+                    <div class="card-content">
+                        <h3>Professor [PLACEHOLDER NAME]</h3>
+                        <p>Expert analysis on the future of work in an increasingly automated industry, including skills that will be in demand.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img">
+                        [PLACEHOLDER FOR EXPERT HEADSHOT]
+                    </div>
+                    <div class="card-content">
+                        <h3>Dr. [PLACEHOLDER NAME]</h3>
+                        <p>Perspectives on the ethical implications of automation and AI in transportation and manufacturing sectors.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Solutions Section -->
+    <section id="solutions">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Addressing the Challenges</h2>
+                <p>Potential solutions and strategies for managing the transition to automated systems</p>
+            </div>
+            
+            <div class="two-column">
+                <div class="column-image">
+                    [PLACEHOLDER FOR RETRAINING PROGRAM IMAGE]
+                </div>
+                <div class="column-text">
+                    <h3>Retraining Programs</h3>
+                    <p>Information about existing and proposed worker retraining initiatives designed to help displaced workers transition to new roles in an automated economy.</p>
+                </div>
+            </div>
+            
+            <div class="two-column">
+                <div class="column-text">
+                    <h3>Policy Recommendations</h3>
+                    <p>Analysis of potential policy approaches to managing automation's impact, including universal basic income, education reform, and regulatory frameworks.</p>
+                </div>
+                <div class="column-image">
+                    [PLACEHOLDER FOR POLICY INFOGRAPHIC]
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <!-- Footer -->
     <footer>
-      <p>&copy; 2025 My GitHub Pages Website</p>
+        <div class="container">
+            <h3>Automation and Job Displacement in Various Industries</h3>
+            <p>A research project by Kevin Lin, Albert Wang, Qitao Yang</p>
+            
+            <ul class="footer-links">
+                <li><a href="#economic-impact">Economic Impact</a></li>
+                <li><a href="#security-privacy">Security & Privacy</a></li>
+                <li><a href="#ethical-social">Ethical Implications</a></li>
+                <li><a href="#case-studies">Case Studies</a></li>
+                <li><a href="#expert-interviews">Expert Insights</a></li>
+            </ul>
+          
+        </div>
     </footer>
-  </body>
+</body>
 </html>
