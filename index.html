@@ -221,6 +221,36 @@
           width: 100%;
         }
       }
+      /* Two Column Layout */
+      .two-column {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        align-items: center;
+        margin: 1.5rem 0;
+      }
+
+      .column-text {
+        padding: 1rem;
+      }
+
+      .column-image {
+        height: 300px;
+        background-color: #f5f5f5;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .two-column {
+          grid-template-columns: 1fr;
+        }
+
+        .column-image {
+          height: 250px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -423,59 +453,93 @@
 
         <div class="content-block">
           <h3>Factory Automation</h3>
-          <p>
-            Tesla's approach to manufacturing automation has evolved
-            significantly since the company's early days. Initially, CEO Elon
-            Musk pursued an aggressive "lights-out factory" strategy with the
-            Model 3 production, attempting to create a fully automated assembly
-            line. This strategy faced significant challenges, leading Musk to
-            later acknowledge in a tweet on April 13th, 2018 that "Yes,
-            excessive automation at Tesla was a mistake. To be precise, my
-            mistake. Humans are underrated."
-          </p>
-          <p>
-            The company subsequently rebalanced its approach, finding an optimal
-            mix of human workers and robotic systems. This case demonstrates
-            important lessons about the limitations of automation and the
-            continued importance of human workers even in highly automated
-            environments. Tesla's experience highlights the risks of
-            implementing too much automation too quickly without adequate
-            testing and integration planning.
-          </p>
-          <span class="source"
-            >https://x.com/elonmusk/status/984882630947753984</span
-          >
+          <div class="two-column">
+            <div class="column-image">
+              <img
+                src="must quote.jpg"
+                alt="Musk says humans are underrated"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 8px;
+                "
+              />
+            </div>
+            <div class="column-text">
+              <p>
+                Tesla's approach to manufacturing automation has evolved
+                significantly since the company's early days. Initially, CEO
+                Elon Musk pursued an aggressive "lights-out factory" strategy
+                with the Model 3 production, attempting to create a fully
+                automated assembly line. This strategy faced significant
+                challenges, leading Musk to later acknowledge in a tweet on
+                April 13th, 2018 that "Yes, excessive automation at Tesla was a
+                mistake. To be precise, my mistake. Humans are underrated."
+              </p>
+              <p>
+                The company subsequently rebalanced its approach, finding an
+                optimal mix of human workers and robotic systems. This case
+                demonstrates important lessons about the limitations of
+                automation and the continued importance of human workers even in
+                highly automated environments. Tesla's experience highlights the
+                risks of implementing too much automation too quickly without
+                adequate testing and integration planning.
+              </p>
+              <span class="source"
+                >https://x.com/elonmusk/status/984882630947753984</span
+              >
+            </div>
+          </div>
         </div>
 
         <div class="content-block">
           <h3>Full self driving</h3>
-          <p>
-            Tesla's approach to autonomous driving technology differs
-            significantly from competitors. Rather than using lidar technology,
-            Tesla relies primarily on cameras, radar, and ultrasonic sensors
-            combined with machine learning algorithms that improve through data
-            collected from its fleet of vehicles. The company has progressively
-            released increasingly capable versions of its autopilot and full
-            self driving software through over the air updates.
-          </p>
-          <p>
-            Although these systems have been improving at a rapid rate, there
-            have been many concerns over the saftey of camera versus lidar.
-            Camera's can only recognize and react to data that they are trained
-            on, while lidar can uses lasers and can determine the actual
-            distance, no matter the condition. A recent video by YouTuber Mark
-            Rober demonstrates the inherent advantages of using lidar by putting
-            it through more hypotetical scenarios, and a report by the Wall
-            Street Journal investigated the real world implications and impacts
-            of tesla's choice of a camera based system.
-          </p>
-          <span class="source"
-            >Mark Rober: https://www.youtube.com/watch?v=IQJL3htsDyQ</span
-          >
-          <span class="source"
-            >Wall Street Journal:
-            https://www.youtube.com/watch?v=mPUGh0qAqWA</span
-          >
+          <div class="two-column">
+            <div class="column-text">
+              <p>
+                Tesla's approach to autonomous driving technology differs
+                significantly from competitors. Rather than using lidar
+                technology, Tesla relies primarily on cameras, radar, and
+                ultrasonic sensors combined with machine learning algorithms
+                that improve through data collected from its fleet of vehicles.
+                The company has progressively released increasingly capable
+                versions of its autopilot and full self driving software through
+                over the air updates.
+              </p>
+              <p>
+                Although these systems have been improving at a rapid rate,
+                there have been many concerns over the saftey of camera versus
+                lidar. Camera's can only recognize and react to data that they
+                are trained on, while lidar can uses lasers and can determine
+                the actual distance, no matter the condition. A recent video by
+                YouTuber Mark Rober demonstrates the inherent advantages of
+                using lidar by putting it through more hypotetical scenarios,
+                and a report by the Wall Street Journal investigated the real
+                world implications and impacts of tesla's choice of a camera
+                based system.
+              </p>
+              <span class="source"
+                >Mark Rober: https://www.youtube.com/watch?v=IQJL3htsDyQ</span
+              >
+              <span class="source"
+                >Wall Street Journal:
+                https://www.youtube.com/watch?v=mPUGh0qAqWA</span
+              >
+            </div>
+            <div class="column-image">
+              <img
+                src="camera fail.jpg"
+                alt="Tesla autopilot camera fails to detect overturned truck at night"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 8px;
+                "
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
